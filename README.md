@@ -1,4 +1,4 @@
- Inclusive Ride-Hailing for Individuals with Disabilities
+Inclusive Ride-Hailing for Individuals with Disabilities
 
 
 MVP Solution Requirements
