@@ -3,7 +3,7 @@ import { View, Text, Pressable } from "react-native";
 import styles from './styles.js';
 import CarTypeRow from "../CarTypeRow/index.js";
 import typesData from '../../assets/data/types';
-import HomeMap from '../../components/HomeMap';
+import HomeMap from '../HomeMap/existing.js';
 
 const CarTypes = (props) => {
   const confirm = () => {
