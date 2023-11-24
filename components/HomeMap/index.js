@@ -17,8 +17,8 @@ const HomeMap = (props) => {
   }
 
   const [mapRegion, setmapRegion] = useState({
-    latitude: 37.78825,
-    longitude: -122.4324,
+    latitude: 51.1694,
+    longitude: 71.4491,
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   });
@@ -28,26 +28,19 @@ const HomeMap = (props) => {
         style={{ alignSelf: 'stretch', height: '100%' }}
         region={mapRegion}
       >
-      {cars.map((car) => (
-        
-      )
-      
-      )}
-        <FlatList 
-          data = {cars}
-          renderItem={({item})  => (
-            <Marker 
-              coordinate = {{latitude: item.latitude, longitude: item.longitude }}
-            >
-              <Image
-                style = {{width: 70, height: 70, resizeMode: 'contain'}}
-                source = {getImage(item.type)} /> 
-          
-            </Marker>
-          
-          )}
-        
-        />
+      {
+      cars.map((car) => (
+         <Marker
+            key={car.id}
+            coordinate = {{latitude: car.latitude, longitude: car.longitude }}
+        >
+          <Image
+            style = {{width: 70, height: 70, resizeMode: 'contain'}}
+            source = {getImage(car.type)} /> 
+     
+        </Marker>
+      ))
+      }
       
       </MapView>
     </View>
