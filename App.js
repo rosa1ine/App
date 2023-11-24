@@ -6,12 +6,14 @@ import DestinationSearch from './screens/DestinationSearch/index.js';
 import HomeScreen from './screens/HomeScreen/index.js';
 import CarTypeRow from './components/CarTypeRow/index.js';
 import CarTypes from './components/CarTypes/index.js';
+import RouteMap from './components/RouteMap/index.js';
+import SearchResults from './screens/SearchResults/index.js';
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <DestinationSearch />
+      <SearchResults/>
     </View>
   );
 }
