@@ -1,11 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import HomeMap from './components/HomeMap/index.js';
+import HomeSearch from './components/HomeSearch/index.js';
+import DestinationSearch from './screens/DestinationSearch/index.js';
+import HomeScreen from './screens/HomeScreen/index.js';
+import CarTypeRow from './components/CarTypeRow/index.js';
+import CarTypes from './components/CarTypes/index.js';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
       <StatusBar style="auto" />
+      <HomeScreen />
     </View>
   );
 }
@@ -13,8 +19,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
