@@ -17,7 +17,7 @@ const RouteMap = (props) => {
   };
   return (
       <MapView
-        style={{alignSelf: 'stretch', height: '60%'}}
+        style={{alignSelf: 'stretch', height: '50%'}}
         provider={PROVIDER_GOOGLE}
         showsUserLocation={true}
         initialRegion={{

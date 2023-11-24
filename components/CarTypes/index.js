@@ -11,9 +11,9 @@ const CarTypes = (props) => {
   };
 
   return (
-    <View style = {{flex: 1}}>
-        <RouteMap />
-       {typesData.map((type) => (
+    <View style = {{flex: 1, flexDirection: 'column'}}>
+      <RouteMap />
+      {typesData.map((type) => (
         <CarTypeRow key={type.id} type = {type}/> ))}
 
         <Pressable onPress = {confirm} style = {{
@@ -22,10 +22,13 @@ const CarTypes = (props) => {
           margin: 10,
           alignItems: 'center'
         }}> 
+
           <Text style= {{color: 'white', fontWeight: 'bold'}}> 
             Confirm Taxi
           </Text>
+
         </Pressable>
+
     </View>
   );
 };
