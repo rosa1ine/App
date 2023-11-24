@@ -1,18 +1,17 @@
+// App.js
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import HomeMap from './components/HomeMap/index.js';
-import HomeSearch from './components/HomeSearch/index.js';
-import DestinationSearch from './screens/DestinationSearch/index.js';
-import HomeScreen from './screens/HomeScreen/index.js';
-import CarTypeRow from './components/CarTypeRow/index.js';
-import CarTypes from './components/CarTypes/index.js';
+import Route from './navigation/Route'; // Adjust the path if Route.js is placed elsewhere
+import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      <HomeScreen />
-    </View>
+    <NavigationContainer>
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+        <Route />
+      </View>
+    </NavigationContainer>
   );
 }
 

@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, TextInput, SafeAreaView} from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
-import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles.js';
 import PlaceRow from "./PlaceRow";
