@@ -4,12 +4,12 @@ import MapView from 'react-native-maps';
 import { Marker } from 'react-native-maps';
 import cars from '../../assets/data/cars'
 const HomeMap = (props) => {
-
   const getImage = (type) => {
-    if (type.type == 'UberX') {
+    
+    if (type == 'UberX') {
       return require('../../assets/images/top-UberX.png')
     }
-    if (type.type == 'Comfort') {
+    if (type == 'Comfort') {
       return require('../../assets/images/top-Comfort.png')
     }
     

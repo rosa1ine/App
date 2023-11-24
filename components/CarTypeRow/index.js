@@ -19,6 +19,7 @@ const CarTypeRow = (props) => {
     return require('../../assets/images/UberXL.jpeg')
     
   }
+  
   return (
     <View style={styles.container}>
       {/* Image */}
