@@ -16,14 +16,14 @@ const CarTypes = (props) => {
         <CarTypeRow key={type.id} type = {type}/> ))}
 
         <Pressable onPress = {confirm} style = {{
-          backgroundColor: 'black',
+          backgroundColor: '#A7E92F',
           padding: 10,
           margin: 10,
           alignItems: 'center'
         }}> 
 
-          <Text style= {{color: 'white', fontWeight: 'bold'}}> 
-            Confirm Taxi
+          <Text style= {{color: 'black', fontWeight: 'bold'}}> 
+            Confirm
           </Text>
 
         </Pressable>
