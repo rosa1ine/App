@@ -9,6 +9,10 @@
     "web": "expo start --web"
   },
   "dependencies": {
+<<<<<<< HEAD
+=======
+    "@react-native-community/geolocation": "^3.1.0",
+>>>>>>> 5169938f49950f301d25435769dab435e0c4dead
     "@react-native-community/masked-view": "^0.1.11",
     "@react-navigation/native": "^6.1.9",
     "expo": "~49.0.15",
@@ -18,10 +22,19 @@
     "react-native-gesture-handler": "~2.12.0",
     "react-native-google-places-autocomplete": "^2.5.6",
     "react-native-maps": "1.7.1",
+<<<<<<< HEAD
     "react-native-reanimated": "~3.3.0",
     "react-native-safe-area-context": "4.6.3",
     "react-native-screens": "~3.22.0",
     "react-navigation": "^5.0.0"
+=======
+    "react-native-maps-directions": "^1.9.0",
+    "react-native-reanimated": "~3.3.0",
+    "react-native-safe-area-context": "4.6.3",
+    "react-native-screens": "~3.22.0",
+    "react-navigation": "^5.0.0",
+    "expo-location": "~16.1.0"
+>>>>>>> 5169938f49950f301d25435769dab435e0c4dead
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

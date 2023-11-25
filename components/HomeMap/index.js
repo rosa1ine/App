@@ -15,10 +15,17 @@ const HomeMap = (props) => {
     
     return require('../../assets/images/top-UberXL.png')
   }
+<<<<<<< HEAD
 
   const [mapRegion, setmapRegion] = useState({
     latitude: 37.78825,
     longitude: -122.4324,
+=======
+//test comment
+  const [mapRegion, setmapRegion] = useState({
+    latitude: 28.450627,
+    longitude: -16.263045,
+>>>>>>> 5169938f49950f301d25435769dab435e0c4dead
     latitudeDelta: 0.0922,
     longitudeDelta: 0.0421,
   });
@@ -28,6 +35,7 @@ const HomeMap = (props) => {
         style={{ alignSelf: 'stretch', height: '100%' }}
         region={mapRegion}
       >
+<<<<<<< HEAD
       {cars.map((car) => (
         
       )
@@ -48,6 +56,21 @@ const HomeMap = (props) => {
           )}
         
         />
+=======
+      {
+      cars.map((car) => (
+         <Marker
+            key={car.id}
+            coordinate = {{latitude: car.latitude, longitude: car.longitude }}
+        >
+          <Image
+            style = {{width: 70, height: 70, resizeMode: 'contain'}}
+            source = {getImage(car.type)} /> 
+     
+        </Marker>
+      ))
+      }
+>>>>>>> 5169938f49950f301d25435769dab435e0c4dead
       
       </MapView>
     </View>

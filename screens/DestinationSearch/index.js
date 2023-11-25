@@ -2,6 +2,10 @@ import React, {useState, useEffect} from 'react';
 import {View, TextInput, SafeAreaView} from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { useNavigation } from '@react-navigation/native';
+<<<<<<< HEAD
+=======
+import * as Location from 'expo-location';
+>>>>>>> 5169938f49950f301d25435769dab435e0c4dead
 
 import styles from './styles.js';
 import PlaceRow from "./PlaceRow";
@@ -18,13 +22,46 @@ const workPlace = {
 const DestinationSearch = (props) => {
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
+<<<<<<< HEAD
 
+=======
+  const navigation = useNavigation();
+>>>>>>> 5169938f49950f301d25435769dab435e0c4dead
 
   useEffect(() => {
     if(originPlace &&destinationPlace) {
       console.warn('Redirected to results');
     }    
   }, [originPlace, destinationPlace]);
+<<<<<<< HEAD
+=======
+  const getCurrentLocation = async () => {
+    try {
+      // Request permission to access location
+      const { status } = await Location.requestForegroundPermissionsAsync();
+      if (status === 'granted') {
+        // Get current location using Expo's Location module
+        const location = await Location.getCurrentPositionAsync({});
+        const { latitude, longitude } = location.coords;
+        setOriginPlace({
+          data: {
+            description: 'Current Location',
+            geometry: { location: { lat: latitude, lng: longitude } },
+          },
+        });
+      } else {
+        console.log('Location permission denied');
+      }
+    } catch (error) {
+      console.error('Error getting current location:', error);
+    }
+  };
+
+
+  useEffect(() => {
+    getCurrentLocation();
+  }, []);
+>>>>>>> 5169938f49950f301d25435769dab435e0c4dead
 
   return (
     <SafeAreaView>
@@ -33,7 +70,11 @@ const DestinationSearch = (props) => {
         <GooglePlacesAutocomplete
           placeholder="Where from?"
           onPress={(data, details = null) => {
+<<<<<<< HEAD
             setOriginPlace({data, details});
+=======
+            setOriginPlace({ data, details });
+>>>>>>> 5169938f49950f301d25435769dab435e0c4dead
           }}
           enablePoweredByContainer={false}
           suppressDefaultStyles
