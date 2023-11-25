@@ -1,7 +1,7 @@
 export default [
   {
     id: '0',
-    type: 'UberX',
+    type: 'Econom',
     latitude: 51.0976,
     longitude: 71.4211,
     heading: 130,
@@ -15,7 +15,7 @@ export default [
   },
   {
     id: '2',
-    type: 'UberXL',
+    type: 'Comfort2',
     latitude: 51.1393, // Adjusted latitude
     longitude: 71.4593, // Adjusted longitude
     heading: 250,

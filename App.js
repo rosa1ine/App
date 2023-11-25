@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import DestinationSearch from './screens/DestinationSearch';
 import Route from './navigation/Route'; // Import Route.js
 import SearchResults from './screens/SearchResults';
+import Profile from './screens/Profile';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler'
 
@@ -14,7 +15,6 @@ export default function App() {
         <NavigationContainer>
           <Route />
         </NavigationContainer>
-       
       </View>
   );
 }

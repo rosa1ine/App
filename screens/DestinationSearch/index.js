@@ -64,7 +64,7 @@ const DestinationSearch = (props) => {
         />
 
         <GooglePlacesAutocomplete
-          placeholder="Where to?"
+          placeholder=" Where to?"
           onPress={(data, details = null) => {
             setDestinationPlace({data, details});
           }}

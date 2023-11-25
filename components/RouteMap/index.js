@@ -6,14 +6,14 @@ import * as Location from 'expo-location';
 import cars from '../../assets/data/cars';
 
 const getImage = (type) => {
-  if (type.type == 'UberX') {
-    return require('../../assets/images/top-UberX.png')
+  if (type.type == 'Econom') {
+    return require('../../assets/images/top-Econom.png')
   }
   if (type.type == 'Comfort') {
     return require('../../assets/images/top-Comfort.png')
   }
   
-  return require('../../assets/images/top-UberXL.png')
+  return require('../../assets/images/top-Comfort2.png')
 }
 
 
@@ -50,7 +50,7 @@ const RouteMap = (props) => {
 
   return (
     <MapView
-      style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height }}
+      style={{ width: Dimensions.get('window').width, height: Dimensions.get('window').height/2.1 }}
       provider={PROVIDER_GOOGLE}
       initialRegion={{
         latitude: 51.1694,

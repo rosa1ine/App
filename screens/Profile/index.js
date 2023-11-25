@@ -6,29 +6,44 @@ import {
   Image,
   TextInput,
   StyleSheet,
+  Switch,
 } from 'react-native';
 
 const Profile = () => {
   const [userData, setUserData] = useState({
     fname: '',
     lname: '',
-    about: '',
-    phone: '',
-    country: '',
+    email: '',
     city: '',
+    // Add state properties for the special features
+    cantHear: false,
+    cantSee: false,
+    inWheelchair: false,
   });
 
   const handleUpdate = () => {
     // Implement your update logic here
     console.log('Update button pressed');
   };
+  const handleGoBack = () => {
+    // Implement your navigation logic to go back
+    // For example, you can use navigation.goBack() if you are using React Navigation
+    console.log('Go back button pressed');
+  };
 
   return (
     <View style={styles.container}>
+        <View style={styles.header}>
+        <TouchableOpacity onPress={handleGoBack}>
+          <Text style={styles.backButton}>&lt;</Text>
+        </TouchableOpacity>
+        <Text style={styles.heading}>Profile settings</Text>
+      </View>
+
       <View style={styles.profileContainer}>
         <TouchableOpacity>
           <Image
-            source={{ uri: 'https://example.com/default-image.jpg' }}
+            source={{ uri: 'https://cdn.pixabay.com/photo/2021/02/12/07/03/icon-6007530_1280.png' }}
             style={styles.profileImage}
           />
         </TouchableOpacity>
@@ -50,11 +65,49 @@ const Profile = () => {
           onChangeText={(text) => setUserData({ ...userData, lname: text })}
           style={styles.textInput}
         />
-        {/* Add more input fields as needed */}
+        <TextInput
+          placeholder="Email"
+          value={userData.email}
+          onChangeText={(text) => setUserData({ ...userData, email: text })}
+          style={styles.textInput}
+        />
+        <TextInput
+          placeholder="City"
+          value={userData.city}
+          onChangeText={(text) => setUserData({ ...userData, city: text })}
+          style={styles.textInput}
+        />
+
+        {/* Special feature */}
+        <View style={styles.specialFeatureContainer}>
+          <Text style={styles.specialFeatureText}>Special feature</Text>
+          <View style={styles.subLineContainer}>
+            <Text>I can't hear, only text</Text>
+            <Switch
+              value={userData.cantHear}
+              onValueChange={(value) => setUserData({ ...userData, cantHear: value })}
+            />
+          </View>
+          <View style={styles.subLineContainer}>
+            <Text>I can't see, only hear</Text>
+            <Switch
+              value={userData.cantSee}
+              onValueChange={(value) => setUserData({ ...userData, cantSee: value })}
+            />
+          </View>
+          <View style={styles.subLineContainer}>
+            <Text>I am in a wheelchair</Text>
+            <Switch
+              value={userData.inWheelchair}
+              onValueChange={(value) => setUserData({ ...userData, inWheelchair: value })}
+            />
+          </View>
+        </View>
+        {/* End of Special features */}
       </View>
 
       <TouchableOpacity style={styles.updateButton} onPress={handleUpdate}>
-        <Text style={styles.updateButtonText}>Update</Text>
+        <Text style={styles.updateButtonText}>Save</Text>
       </TouchableOpacity>
     </View>
   );
@@ -66,13 +119,28 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 20,
   },
-  profileContainer: {
+  header: {
+    marginTop: 10,
+    flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 20,
   },
+  backButton: {
+    fontSize: 24,
+    marginRight: 10,
+  },
+  heading: {
+    fontSize: 24,
+    fontWeight: 500,
+  },
+  profileContainer: {
+    marginTop: 50,
+    alignItems: 'center',
+    marginBottom: 0,
+  },
   profileImage: {
-    height: 100,
-    width: 100,
+    height: 120,
+    width: 120,
     borderRadius: 15,
   },
   profileName: {
@@ -90,8 +158,21 @@ const styles = StyleSheet.create({
     fontSize: 16,
     paddingVertical: 8,
   },
+  specialFeatureContainer: {
+    marginTop: 20,
+  },
+  specialFeatureText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  subLineContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 5,
+  },
   updateButton: {
-    backgroundColor: '#2e64e5',
+    backgroundColor: '#A7E92F',
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
