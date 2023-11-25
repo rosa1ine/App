@@ -12,7 +12,6 @@ const CarTypes = (props) => {
 
   return (
     <View style = {{flex: 1, flexDirection: 'column'}}>
-      <RouteMap />
       {typesData.map((type) => (
         <CarTypeRow key={type.id} type = {type}/> ))}
 

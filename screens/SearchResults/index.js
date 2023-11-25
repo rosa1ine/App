@@ -7,13 +7,12 @@ import {useRoute} from '@react-navigation/native';
 
 const SearchResults = (props) => {
     const route = useRoute();
-
-    console.log(route.parans);
+    const { originPlace, destinationPlace } = route.params;
     return (
         <View style={styles.container}>
             <View style = {{flex: 1, flexDirection: 'column'}}>
+                <RouteMap originPlace={originPlace} destinationPlace={destinationPlace}/>
                 <CarTypes />
-                
             </View>
         </View>
     );
