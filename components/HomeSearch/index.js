@@ -1,49 +1,3 @@
-<<<<<<< HEAD
-import React from "react";
-import { View, Text, Pressable } from "react-native";
-
-import AntDesign from "react-native-vector-icons/AntDesign";
-import MaterialIcons from "react-native-vector-icons/MaterialIcons";
-import Entypo from "react-native-vector-icons/Entypo";
-
-import styles from './styles.js';
-
-const HomeSearch = (props) => {
-  
-  return (
-    <View style= {styles.container}>
-      {/*  Input Box */}
-      <View style={styles.inputBox}>
-        <Text style={styles.inputText}>From where</Text>
-
-        <View style={styles.timeContainer}>
-          <AntDesign name={'clockcircle'} size={16} color={'#535353'} />
-          <Text>Now</Text>
-          <MaterialIcons name={'keyboard-arrow-down'} size={16} />
-        </View>
-      </View>
-
-      {/* Previous destination */}
-      <View style={styles.row}>
-        <View style={styles.iconContainer}>
-          <AntDesign name={'clockcircle'} size={20} color={'#ffffff'} />
-        </View>
-        <Text style={styles.destinationText}>Spin Nightclub</Text>
-      </View>
-
-      {/* Home destination */}
-      <View style={styles.row}>
-        <View style={[styles.iconContainer, {backgroundColor: '#218cff'}]}>
-          <Entypo name={'home'} size={20} color={'#ffffff'} />
-        </View>
-        <Text style={styles.destinationText}>Spin Nightclub</Text>
-      </View>
-    </View>
-  );
-};
-
-export default HomeSearch;
-=======
 import React from "react";
 import { View, Text, Pressable } from "react-native";
 import { useNavigation } from '@react-navigation/native';
@@ -94,4 +48,3 @@ const HomeSearch = (props) => {
 };
 
 export default HomeSearch;
->>>>>>> 6ad53b49086065c249b79f74f14a7ff22a4ffe51
