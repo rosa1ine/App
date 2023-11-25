@@ -7,6 +7,11 @@ import SearchResults from './screens/SearchResults';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler'
 import registerNNPushToken from 'native-notify';
+import Profile from './screens/Profile/index.js';
+
+import Geolocation from '@react-native-community/geolocation';
+navigator.geolocation = require('@react-native-community/geolocation');
+
 
 export default function App() {
   registerNNPushToken(15337, 'ZITbRRqmrjebvoxOjRSBBH');
@@ -14,6 +19,7 @@ export default function App() {
   return (
       <View style={styles.container}>
         <StatusBar style="auto" />
+        <DestinationSearch/>
         <NavigationContainer>
           <Route />
         </NavigationContainer>
