@@ -1,11 +1,18 @@
 import React, {useState, useEffect} from 'react';
 import {View, TextInput, SafeAreaView} from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+<<<<<<< HEAD
 import { useNavigation } from '@react-navigation/native';
 
 import styles from './styles.js';
 import PlaceRow from "./PlaceRow";
 
+=======
+import styles from './styles.js';
+import PlaceRow from "./PlaceRow";
+
+
+>>>>>>> 6ad53b49086065c249b79f74f14a7ff22a4ffe51
 const homePlace = {
   description: 'Home',
   geometry: { location: { lat: 48.8152937, lng: 2.4597668 } },
@@ -26,6 +33,10 @@ const DestinationSearch = (props) => {
     }    
   }, [originPlace, destinationPlace]);
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 6ad53b49086065c249b79f74f14a7ff22a4ffe51
   return (
     <SafeAreaView>
       <View style={styles.container}>
