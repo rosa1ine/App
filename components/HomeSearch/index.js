@@ -14,7 +14,7 @@ const HomeSearch = (props) => {
     <View style= {styles.container}>
       {/*  Input Box */}
       <View style={styles.inputBox}>
-        <Text style={styles.inputText}>Where To?</Text>
+        <Text style={styles.inputText}>From where</Text>
 
         <View style={styles.timeContainer}>
           <AntDesign name={'clockcircle'} size={16} color={'#535353'} />

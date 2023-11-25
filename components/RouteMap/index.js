@@ -98,5 +98,4 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
->>>>>>> 6ad53b49086065c249b79f74f14a7ff22a4ffe51
 });
