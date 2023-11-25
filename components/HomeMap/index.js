@@ -5,14 +5,14 @@ import cars from '../../assets/data/cars'
 const HomeMap = (props) => {
   const getImage = (type) => {
 
-    if (type == 'UberX') {
-      return require('../../assets/images/top-UberX.png')
+    if (type == 'Econom') {
+      return require('../../assets/images/top-Econom.png')
     }
     if (type == 'Comfort') {
       return require('../../assets/images/top-Comfort.png')
     }
     
-    return require('../../assets/images/top-UberXL.png')
+    return require('../../assets/images/top-Comfort2.png')
   }
 
   const [mapRegion, setmapRegion] = useState({

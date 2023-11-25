@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     padding: 10,
-    backgroundColor: '#eee',
+    backgroundColor: '#ffffff',
     marginVertical: 5,
     
   },
@@ -45,4 +45,3 @@ const styles = StyleSheet.create({
 });
 
 export default styles;
-

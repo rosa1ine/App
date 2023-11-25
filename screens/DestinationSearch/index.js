@@ -4,7 +4,6 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 import styles from './styles.js';
 import PlaceRow from "./PlaceRow";
 import {useNavigation} from '@react-navigation/native';
-import * as Location from 'expo-location';
 
 const homePlace = {
   description: 'Home',
@@ -23,41 +22,16 @@ const DestinationSearch = (props) => {
   
   const checkNavigation = () => {
     if(originPlace &&destinationPlace) {
-      navigation.navigate("SearchResults", {originPlace, destinationPlace,}  )
-
+      navigation.navigate("SearchResults", {
+        originPlace,
+        destinationPlace,
+    }  )
   }
 }
 
   useEffect(() => {
     checkNavigation(); 
   }, [originPlace, destinationPlace]);
-  
-  const getCurrentLocation = async () => {
-    try {
-      // Request permission to access location
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status === 'granted') {
-        // Get current location using Expo's Location module
-        const location = await Location.getCurrentPositionAsync({});
-        const { latitude, longitude } = location.coords;
-        setOriginPlace({
-          data: {
-            description: 'Current Location',
-            geometry: { location: { lat: latitude, lng: longitude } },
-          },
-        });
-      } else {
-        console.log('Location permission denied');
-      }
-    } catch (error) {
-      console.error('Error getting current location:', error);
-    }
-  };
-
-
-  useEffect(() => {
-    getCurrentLocation();
-  }, []);
 
 
   return (
@@ -67,7 +41,7 @@ const DestinationSearch = (props) => {
         <GooglePlacesAutocomplete
           placeholder="Where from?"
           onPress={(data, details = null) => {
-            setOriginPlace({ data, details });
+            setOriginPlace({data, details});
           }}
           enablePoweredByContainer={false}
           suppressDefaultStyles
@@ -90,7 +64,7 @@ const DestinationSearch = (props) => {
         />
 
         <GooglePlacesAutocomplete
-          placeholder="Where to?"
+          placeholder=" Where to?"
           onPress={(data, details = null) => {
             setDestinationPlace({data, details});
           }}
@@ -117,7 +91,6 @@ const DestinationSearch = (props) => {
       </View>
     </SafeAreaView>
   );
-
 };
 
 export default DestinationSearch;

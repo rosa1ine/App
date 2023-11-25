@@ -3,6 +3,9 @@ import { View, Text, Pressable } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 import AntDesign from "react-native-vector-icons/AntDesign";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+
+
 import Entypo from "react-native-vector-icons/Entypo";
 import styles from './styles.js';
 
@@ -15,34 +18,30 @@ const HomeSearch = (props) => {
 
   return (
     <View style= {styles.container}>
-      {/* Pressable Input Box */}
-      <Pressable onPress={navigateToDestinationSearch}>
-        <View style={styles.inputBox}>
-          <Text style={styles.inputText}>Where To?</Text>
-          <View style={styles.timeContainer}>
-            <AntDesign name={'clockcircle'} size={16} color={'#535353'} />
-            <Text>Now</Text>
-            <MaterialIcons name={'keyboard-arrow-down'} size={16} />
-          </View>
-        </View>
-      </Pressable>
+      
 
-     
       {/* Previous destination */}
       <View style={styles.row}>
         <View style={styles.iconContainer}>
-          <AntDesign name={'clockcircle'} size={20} color={'#ffffff'} />
+          <FontAwesome name={'eur'} size={20} color={'#ffffff'} />
         </View>
-        <Text style={styles.destinationText}>Work</Text>
+        <Text style={styles.destinationText}>2,050, cash</Text>
       </View>
 
       {/* Home destination */}
       <View style={styles.row}>
-        <View style={[styles.iconContainer, {backgroundColor: '#218cff'}]}>
-          <Entypo name={'home'} size={20} color={'#ffffff'} />
+        <View style={[styles.iconContainer, {backgroundColor: '#A7E92F'}]}>
+          <MaterialIcons name={'comment'} size={20} color={'#F2F7F9'} />
         </View>
-        <Text style={styles.destinationText}>Home</Text>
+        <Text style={styles.destinationText}>Comments</Text>
       </View>
+
+      {/* Pressable Input Box */}
+      <Pressable onPress={navigateToDestinationSearch}>
+        <View style={styles.inputBox}>
+          <Text style={styles.inputText}>Find a driver</Text>
+        </View>
+      </Pressable>
     </View>
   );
 };

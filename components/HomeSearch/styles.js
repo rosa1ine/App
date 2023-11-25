@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
       height: 'auto',
     },
     inputBox: {
-        backgroundColor: '#b0b0b0',
+        backgroundColor: '#A7E92F',
         margin: 10,
         padding: 10,
         flexDirection: 'row',
@@ -15,9 +15,10 @@ const styles = StyleSheet.create({
     },
 
     inputText: {
+        marginLeft: 125,
         fontSize: 20,
         fontWeight: '600',
-        color: '#6e6e6e',
+        color: '#000000',
     },
 
     timeContainer:{

@@ -1,22 +1,37 @@
 import React, { useState, useEffect, useRef } from "react";
-import MapView from 'react-native-maps';
-import {View, Text, StyleSheet} from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import * as Location from "expo-location";
 import RouteMap from "../../components/RouteMap";
 import CarTypes from "../../components/CarTypes";
 import {useRoute} from '@react-navigation/native';
 
-const SearchResults = (props) => {
-    const route = useRoute();
-    const { originPlace, destinationPlace } = route.params;
 
-    return (
-        <View style={styles.container}>
-            <View style = {{flex: 1, flexDirection: 'column'}}>
-                <RouteMap origin={originPlace} destination={destinationPlace}/>
-                <CarTypes />
-            </View>
+const SearchResults = (props) => {
+
+  // Permission to get geolocation
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        console.log('Permission to access location was denied');
+        return;
+      }
+    })();
+  }, []);
+
+  const route = useRoute();
+
+console.log(route.parans);
+  return (
+    <View style={styles.container}>
+        <View style = {{flex: 1, flexDirection: 'column'}}>
+           <RouteMap />
+            <CarTypes />           
         </View>
-    );
+    </View>
+
+  );
+  
 };
 
 const styles = StyleSheet.create({
