@@ -25,20 +25,9 @@ const Profile = () => {
     // Implement your update logic here
     console.log('Update button pressed');
   };
-  const handleGoBack = () => {
-    // Implement your navigation logic to go back
-    // For example, you can use navigation.goBack() if you are using React Navigation
-    console.log('Go back button pressed');
-  };
 
   return (
     <View style={styles.container}>
-        <View style={styles.header}>
-        <TouchableOpacity onPress={handleGoBack}>
-          <Text style={styles.backButton}>&lt;</Text>
-        </TouchableOpacity>
-        <Text style={styles.heading}>Profile settings</Text>
-      </View>
 
       <View style={styles.profileContainer}>
         <TouchableOpacity>
@@ -119,22 +108,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 20,
   },
-  header: {
-    marginTop: 10,
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  backButton: {
-    fontSize: 24,
-    marginRight: 10,
-  },
-  heading: {
-    fontSize: 24,
-    fontWeight: 500,
-  },
+ 
   profileContainer: {
-    marginTop: 50,
+    marginTop: 0,
     alignItems: 'center',
     marginBottom: 0,
   },
