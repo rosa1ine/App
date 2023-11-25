@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import {View, TextInput, SafeAreaView} from 'react-native';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 import { useNavigation } from '@react-navigation/native';
-import * as Location from 'expo-location';
 
 import styles from './styles.js';
 import PlaceRow from "./PlaceRow";
@@ -19,39 +18,13 @@ const workPlace = {
 const DestinationSearch = (props) => {
   const [originPlace, setOriginPlace] = useState(null);
   const [destinationPlace, setDestinationPlace] = useState(null);
-  const navigation = useNavigation();
+
 
   useEffect(() => {
     if(originPlace &&destinationPlace) {
       console.warn('Redirected to results');
     }    
   }, [originPlace, destinationPlace]);
-  const getCurrentLocation = async () => {
-    try {
-      // Request permission to access location
-      const { status } = await Location.requestForegroundPermissionsAsync();
-      if (status === 'granted') {
-        // Get current location using Expo's Location module
-        const location = await Location.getCurrentPositionAsync({});
-        const { latitude, longitude } = location.coords;
-        setOriginPlace({
-          data: {
-            description: 'Current Location',
-            geometry: { location: { lat: latitude, lng: longitude } },
-          },
-        });
-      } else {
-        console.log('Location permission denied');
-      }
-    } catch (error) {
-      console.error('Error getting current location:', error);
-    }
-  };
-
-
-  useEffect(() => {
-    getCurrentLocation();
-  }, []);
 
   return (
     <SafeAreaView>
@@ -60,7 +33,7 @@ const DestinationSearch = (props) => {
         <GooglePlacesAutocomplete
           placeholder="Where from?"
           onPress={(data, details = null) => {
-            setOriginPlace({ data, details });
+            setOriginPlace({data, details});
           }}
           enablePoweredByContainer={false}
           suppressDefaultStyles

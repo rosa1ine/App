@@ -1,3 +1,4 @@
+import React, { useEffect }  from "react";
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import HomeMap from './components/HomeMap/index.js';
@@ -9,19 +10,30 @@ import CarTypes from './components/CarTypes/index.js';
 import RouteMap from './components/RouteMap/index.js';
 import SearchResults from './screens/SearchResults/index.js';
 import Profile from './screens/Profile/index.js';
+import * as Location from 'expo-location';
 
-import Geolocation from '@react-native-community/geolocation';
-navigator.geolocation = require('@react-native-community/geolocation');
+
 
 export default function App() {
+
+  useEffect(() => {
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== 'granted') {
+        console.log('Permission to access location was denied');
+        return;
+      }
+    })();
+  }, []);
+  
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <DestinationSearch/>
+      <SearchResults/>
     </View>
   );
 }
-/*Ayaulym says hi*/
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -4,6 +4,7 @@ import styles from './styles.js';
 import CarTypeRow from "../CarTypeRow/index.js";
 import typesData from '../../assets/data/types';
 import HomeMap from '../../components/HomeMap';
+import RouteMap from "../RouteMap/index.js";
 
 const CarTypes = (props) => {
   const confirm = () => {
@@ -12,7 +13,7 @@ const CarTypes = (props) => {
 
   return (
     <View style = {{flex: 1}}>
-        <HomeMap />
+        <HomeMap/>
        {typesData.map((type) => (
         <CarTypeRow type = {type}/> ))}
 
