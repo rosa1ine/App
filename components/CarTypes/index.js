@@ -3,7 +3,7 @@ import { View, Text, Pressable } from "react-native";
 import styles from './styles.js';
 import CarTypeRow from "../CarTypeRow/index.js";
 import typesData from '../../assets/data/types';
-import HomeMap from '../../components/HomeMap';
+import RouteMap from "../RouteMap/index.js";
 
 const CarTypes = (props) => {
   const confirm = () => {
@@ -11,10 +11,9 @@ const CarTypes = (props) => {
   };
 
   return (
-    <View style = {{flex: 1}}>
-        <HomeMap />
-       {typesData.map((type) => (
-        <CarTypeRow type = {type}/> ))}
+    <View style = {{flex: 1, flexDirection: 'column'}}>
+      {typesData.map((type) => (
+        <CarTypeRow key={type.id} type = {type}/> ))}
 
         <Pressable onPress = {confirm} style = {{
           backgroundColor: 'black',
@@ -22,10 +21,13 @@ const CarTypes = (props) => {
           margin: 10,
           alignItems: 'center'
         }}> 
+
           <Text style= {{color: 'white', fontWeight: 'bold'}}> 
             Confirm Taxi
           </Text>
+
         </Pressable>
+
     </View>
   );
 };

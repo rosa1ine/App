@@ -1,20 +1,18 @@
-// Route.js
 import React from 'react';
-import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from '../screens/HomeScreen/index'; // Adjust this path if necessary
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from '../screens/HomeScreen'; // Import your screens here
 import DestinationSearch from '../screens/DestinationSearch';
+import HomeNavigator from './HomeNavigator';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
-const Route = () => {
+function Route() {
   return (
-    <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={HomeScreen} />
-      <Stack.Screen name="DestinationSearch" component={DestinationSearch} />
-
-      {/* Add other routes as needed */}
-    </Stack.Navigator>
+      <Drawer.Navigator>
+        <Drawer.Screen name="HomeNavigator" component={HomeNavigator} />
+      </Drawer.Navigator>
   );
-};S
+}
 
 export default Route;

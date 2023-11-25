@@ -17,11 +17,10 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "config": {
-        "googleMapsApiKey": "AIzaSyBtFhohEE8jedn2NpX0HXa6JWIWhbCCapY"
+      "googleMaps":{
+        "apiKey": "AIzaSyBtFhohEE8jedn2NpX0HXa6JWIWhbCCapY"
         }
     },
     "web": {
