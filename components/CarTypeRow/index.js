@@ -102,4 +102,3 @@ const CarTypeRow = (props) => {
 };
 
 export default CarTypeRow;
->>>>>>> 6ad53b49086065c249b79f74f14a7ff22a4ffe51

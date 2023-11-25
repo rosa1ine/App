@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import HomeMap from '../../components/HomeMap';
+import HomeMap from '../../trash';
 import HomeSearch from '../../components/HomeSearch';
 
 const HomeScreen = (props) => {
