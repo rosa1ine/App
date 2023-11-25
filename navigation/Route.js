@@ -10,7 +10,7 @@ const Drawer = createDrawerNavigator();
 function Route() {
   return (
       <Drawer.Navigator>
-        <Drawer.Screen name="Home" component={HomeNavigator} />
+        <Drawer.Screen name="HomeNavigator" component={HomeNavigator} />
       </Drawer.Navigator>
   );
 }
