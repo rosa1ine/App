@@ -15,7 +15,7 @@ const HomeMap = (props) => {
     
     return require('../../assets/images/top-UberXL.png')
   }
-
+//test comment
   const [mapRegion, setmapRegion] = useState({
     latitude: 51.1694,
     longitude: 71.4491,
