@@ -3,7 +3,6 @@
     "name": "InDrive",
     "slug": "App",
     "version": "1.0.0",
-    "sdkVersion": "49.0.0",
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "splash": {
@@ -14,20 +13,26 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kamilasalimzh.App"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-
       "config": {
         "googleMapsApiKey": "AIzaSyBtFhohEE8jedn2NpX0HXa6JWIWhbCCapY"
-        }
+      },
+      "package": "com.kamilasalimzh.App"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "564303f5-ea2f-4a28-af92-fde040649ee6"
+      }
     }
   }
 }
