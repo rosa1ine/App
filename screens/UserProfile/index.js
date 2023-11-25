@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+//import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import {
   View,
   Text,
@@ -15,11 +17,35 @@ const Profile = () => {
     lname: '',
     email: '',
     city: '',
-    // Add state properties for the special features
     cantHear: false,
     cantSee: false,
     inWheelchair: false,
   });
+
+  useEffect(() => {
+    // Fetch user data from the backend when the component mounts
+    fetchUserData();
+  }, []); // Empty dependency array ensures the effect runs only once
+
+  const fetchUserData = async () => {
+    try {
+      const response = await axios.get('http://your-backend-url/users/1'); // Replace with your actual backend URL
+      const user = response.data;
+
+      // Update the state with the fetched user data
+      setUserData({
+        fname: user.FirstName,
+        lname: user.LastName,
+        email: user.Email,
+        city: user.City,
+        cantHear: user.CantHear,
+        cantSee: user.CantSee,
+        inWheelchair: user.InWheelchair,
+      });
+    } catch (error) {
+      console.error('Error fetching user data:', error);
+    }
+  };
 
   const handleUpdate = () => {
     // Implement your update logic here
@@ -100,6 +126,7 @@ const Profile = () => {
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
