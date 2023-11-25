@@ -19,6 +19,7 @@ const CarTypeRow = (props) => {
     return require('../../assets/images/UberXL.jpeg')
     
   }
+
   return (
     <View style={styles.container}>
       {/* Image */}
@@ -43,6 +44,7 @@ const CarTypeRow = (props) => {
         <Ionicons name={'pricetag'} size={18} color={'#42d742'} />
         <Text style={styles.price}>est. {type.price}</Text>
       </View>
+      
     </View>
   );
 };
