@@ -3,6 +3,13 @@
     "name": "App",
     "slug": "App",
     "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
+    "googleMaps": {
+      "apiKey": "AIzaSyBtFhohEE8jedn2NpX0HXa6JWIWhbCCapY"
+    },
     "orientation": "portrait",
     "userInterfaceStyle": "light",
     "splash": {
@@ -13,18 +20,27 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.kamilasalimzh.App"
     },
     "android": {
       "adaptiveIcon": {
         "backgroundColor": "#ffffff"
       },
-      "googleMaps":{
-        "apiKey": "AIzaSyBtFhohEE8jedn2NpX0HXa6JWIWhbCCapY"
+      "package": "com.kamilasalimzh.App",
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyBtFhohEE8jedn2NpX0HXa6JWIWhbCCapY"
         }
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "564303f5-ea2f-4a28-af92-fde040649ee6"
+      }
     }
   }
 }

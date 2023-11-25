@@ -6,8 +6,10 @@ import Route from './navigation/Route'; // Import Route.js
 import SearchResults from './screens/SearchResults';
 import { NavigationContainer } from '@react-navigation/native';
 import 'react-native-gesture-handler'
+import registerNNPushToken from 'native-notify';
 
 export default function App() {
+  registerNNPushToken(15337, 'ZITbRRqmrjebvoxOjRSBBH');
   return (
       <View style={styles.container}>
         <StatusBar style="auto" />
