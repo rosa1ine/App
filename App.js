@@ -11,25 +11,15 @@ import RouteMap from './components/RouteMap/index.js';
 import SearchResults from './screens/SearchResults/index.js';
 import Profile from './screens/Profile/index.js';
 import * as Location from 'expo-location';
-
+import VoiceRecognition from "./components/VoiceRecognition/VoiceRecognition.js";
 
 
 export default function App() {
-
-  useEffect(() => {
-    (async () => {
-      let { status } = await Location.requestForegroundPermissionsAsync();
-      if (status !== 'granted') {
-        console.log('Permission to access location was denied');
-        return;
-      }
-    })();
-  }, []);
   
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <SearchResults/>
+      <VoiceRecognition/>
     </View>
   );
 }

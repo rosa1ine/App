@@ -120,6 +120,13 @@ const RouteMap = (props) => {
           });
         }}
       />
+      <MapViewDirections
+        origin={pin}
+        destination={destination}
+        apikey={GOOGLE_MAPS_APIKEY}
+        strokeWidth={5}
+        strokeColor="blue"
+      />
     </MapView>
   );
 };
